@@ -26,7 +26,7 @@ while True:
     # Create a binary (mask) image, HSV = hue (colour) (0-180), saturation  (0-255), value (brightness) (0-255)
     hsv_thresh = cv2.inRange(hsv_img,
                                 np.array((100, 100, 0)), # lower range
-                                np.array((150, 255, 255))) # upper range
+                                np.array((240, 255, 200))) # upper range
 
     # just for the fun of it, print the mean value of each HSV channel within the mask 
     # print(cv2.mean(hsv_img[:, :, 0], mask = hsv_thresh)[0])
