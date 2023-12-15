@@ -12,7 +12,7 @@ print("Trilobot Example: Avoid Walls\n")
 
 
 SPEED = 0.7  # The speed to drive at
-TURN_DISTANCE = 30  # How close a wall needs to be, in cm, before we start turning
+TURN_DISTANCE = 40 # How close a wall needs to be, in cm, before we start turning
 
 tbot = Trilobot()
 
