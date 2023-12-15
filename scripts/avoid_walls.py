@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from trilobot import Trilobot, BUTTON_A
+import time 
 
 """
 Further demonstrating Trilobot's ultrasound distance sensor, this example will drive
@@ -12,7 +13,7 @@ print("Trilobot Example: Avoid Walls\n")
 
 
 SPEED = 0.7  # The speed to drive at
-TURN_DISTANCE = 40 # How close a wall needs to be, in cm, before we start turning
+TURN_DISTANCE = 30 # How close a wall needs to be, in cm, before we start turning
 
 tbot = Trilobot()
 
@@ -25,6 +26,10 @@ while not tbot.read_button(BUTTON_A):
     # Turn if we are too closer than the turn distance
     if distance < TURN_DISTANCE:
         tbot.turn_right(SPEED)
+        time.sleep(0.5)
+    elif distance < 5:
+        tbot.backward(SPEED)
+        time.sleep(1)
     else:
         tbot.forward(SPEED)
     # No sleep is needed, as distance sensor provides sleep
